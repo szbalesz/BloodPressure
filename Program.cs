@@ -24,6 +24,13 @@ namespace bloodpressure
             Console.WriteLine("Adja meg a pulzusszámot:");
             int pulzusszam = int.Parse(Console.ReadLine());
 
+            //listák létrehozása
+            List<string> datumok = new List<string>();
+            List<int> szisztolesek = new List<int>();
+            List<int> diasztolesek = new List<int>();
+            List<int> pulzusszamok = new List<int>();
+            List<string> napszakok = new List<string>();
+            
             if (!File.Exists(nev + ".txt")) //ha nem létezik a fájl akkor kiíratjuk az egészet
             {
                 StreamWriter fajl = new StreamWriter(nev+".txt");
@@ -71,13 +78,6 @@ namespace bloodpressure
             {
                 string[] sorok = File.ReadAllLines(nev + ".txt"); //beolvassuk az előző fájlt
                 StreamWriter fajl = new StreamWriter(nev + ".txt"); //megnyitjuk a fájlt emiatt kitöröljük a tartalmát
-
-                //listák létrehozása
-                List<string> datumok = new List<string>();
-                List<int> szisztolesek = new List<int>();
-                List<int> diasztolesek = new List<int>();
-                List<int> pulzusszamok = new List<int>();
-                List<string> napszakok = new List<string>();
 
                 //fájl sorainak elsplitelése
                 for (int i = 2; i < sorok.Length - 3; i++)
