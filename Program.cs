@@ -31,7 +31,7 @@ namespace bloodpressure
             List<int> pulzusszamok = new List<int>();
             List<string> napszakok = new List<string>();
             
-            if (!File.Exists(nev + ".txt")) //ha nem létezik a fájl akkor kiíratjuk az egészet
+            if (!File.Exists(nev + ".txt")) //ha nem létezik a fájl
             {
                 StreamWriter fajl = new StreamWriter(nev+".txt");
                 fajl.WriteLine("Név: {0}",nev);
